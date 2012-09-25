@@ -1,0 +1,6 @@
+"Severity","ThreadID","Date","Time","Application","Message"
+"ERROR","web-0","09/25/2012","21:45:52","","No matching Method/Function for JAVASCRIPTLINKTAG(string)"
+"ERROR","web-0","09/25/2012","21:50:19","","missing terminating [#] for expression"
+"ERROR","web-0","09/25/2012","21:50:32","","missing terminating [#] for expression"
+"ERROR","web-0","09/25/2012","22:01:37","","Page /config/developmet/settings.cfm [/Users/andy/Sites/Cows/mycleancampus/config/developmet/settings.cfm] not found"
+"ERROR","web-0","09/25/2012","22:14:27","","missing terminating [#] for expression"
