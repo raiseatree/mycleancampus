@@ -17,6 +17,6 @@ WEB-INF/railo/lib-hash
 # Other files and folders to ignore
 *.DS_Store
 *.log
-*.log.*
+log/access.log
 *.metadata
 *.project
