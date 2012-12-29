@@ -1,0 +1,22 @@
+# unpacked plugin folders
+plugins/**/*
+
+# DBMigrate plugin: generated SQL
+*.sql
+
+files/*.*
+
+
+# Railo Web Context Password file & cached classes & temp files
+WEB-INF/railo/cfclasses
+WEB-INF/railo/logs
+WEB-INF/railo/scheduler/scheduler.xml
+WEB-INF/railo/temp
+WEB-INF/railo/lib-hash
+
+# Other files and folders to ignore
+*.DS_Store
+*.log
+*.log.*
+*.metadata
+*.project
