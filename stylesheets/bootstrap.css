@@ -5787,6 +5787,21 @@ a.badge:hover {
   position: fixed;
 }
 
+/* Custom CC Styles */
 ul.iconList li {
 	list-style-image: url('../images/icon-list.png');
+}
+
+.red {color: #FF0000}
+.green {color: #83C500}
+
+.signupBox {
+	text-align: center;
+	width: 260px;
+	margin-left: 30px;
+	float: left; 
+	border: solid 1px #83C500;
+	-webkit-border-radius: 5px;
+	   -moz-border-radius: 5px;
+	        border-radius: 5px;	
 }

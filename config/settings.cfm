@@ -4,6 +4,7 @@
 	<cfset set(dataSourceUserName="")>
 	<cfset set(dataSourcePassword="")> 
 --->
+<cfset set(google.analytics.trackerId = "UA-37319894-1")>
 
 <!---
 	If you leave this setting commented out, Wheels will try to determine the URL rewrite capabilities automatically.
