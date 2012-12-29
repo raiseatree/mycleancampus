@@ -39,7 +39,7 @@
 		</span>
 	</div>
 	
-	<div class="row" id="mainForm">
+	<div class="row hide" id="mainForm">
 		<br /><br />
 		
 		<div class="span7">
@@ -101,7 +101,7 @@
 					</p>
 				</fieldset>
 				
-				<fieldset class="purchaseOrder">
+				<fieldset class="purchaseOrder hide">
 					<legend>Purchase Order Details</legend>
 					<p>
 						<span class="span2"><strong>Purchase Order Ref#imageTag('req.png')# </strong></span>
@@ -151,8 +151,6 @@
 	
 	<script>
 		$(document).ready(function() {
-			$('##mainForm').hide();
-			$('.purchaseOrder').hide();
 			
 			$('.signup-btn').click(function() {
 				
