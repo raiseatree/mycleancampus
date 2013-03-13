@@ -10,19 +10,26 @@
 		</div>	
 	
 		<span class="signupBox">
+			<h3>30-Day FREE Trial</h3>
+			<h4><strike class="red">&pound;250.00</strike> &pound;FREE</h4>
+			<p class="green"><strong>ex VAT</strong></p>
+			<p>Limited Time Only!</p>
+			<p><a href="##" class="btn btn-primary btn-large signup-btn">Select</a></p>
+		</span>
+		<span class="signupBox">
 			<h3>College</h3>
 			<h4><strike class="red">&pound;500.00</strike> &pound;250.00/year</h4>
 			<p class="green"><strong>ex VAT</strong></p>
 			<p>Up to 250 staff</p>
 			<p><a href="##" class="btn btn-primary btn-large signup-btn">Select</a></p>
 		</span>
-		<span class="signupBox">
+		<!---<span class="signupBox">
 			<h3>Large College</h3>
 			<h4><strike class="red">&pound;1,000.00</strike> &pound;500.00/year</h4>
 			<p class="green"><strong>ex VAT</strong></p>
 			<p>Up to 1,000 staff</p>
 			<p><a href="##" class="btn btn-primary btn-large signup-btn">Select</a></p>
-		</span>
+		</span>--->
 		<span class="signupBox">
 			<h3>University</h3>
 			<h4><strike class="red">&pound;2,000.00</strike> &pound;1,000.00/year</h4>
@@ -37,6 +44,12 @@
 			<p>Over 5,000 staff</p>
 			<p><a href="##" class="btn btn-primary btn-large signup-btn">Select</a></p>
 		</span>
+	</div>
+	
+	<div id="signupMsg">
+	
+		<h3>#imageTag('up-arrow.png')# Select a package above to proceed</h3>
+	
 	</div>
 	
 	<div class="row hide" id="mainForm">
@@ -166,7 +179,9 @@
 				// Change the text on the button
 				$(this).text('Selected');
 				
-				$('##mainForm').fadeIn();
+				$('##mainForm').fadeIn(function() {
+					$('##signupMsg').hide();
+				});
 			});
 			
 			$('.online').click(function() {

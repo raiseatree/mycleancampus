@@ -4,12 +4,17 @@
 	
 	<div id="myCarousel" class="carousel slide">
 		
-			<div class="hero-unit">
-				<h1>CleanCampus</h1>
-				<p>CleanCampus gives approved staff or students the ability to report environmental and aesthetic issues using their smart phone, reports are automatically sent to relevant staff for attention.</p>
-				<p><br /><a class="btn btn-primary btn-large" href="##benefits">Learn more &raquo;</a></p>
+			<div class="hero-unit clearfix">
+				<span class="span4">
+					<h1>CleanCampus</h1><br />
+					<p>CleanCampus gives approved staff or students the ability to report environmental and aesthetic issues using their smart phone, reports are automatically sent to relevant staff for attention.</p>
+					<p><br /><a class="btn btn-primary btn-large" href="##benefits">Learn more &raquo;</a></p>
+				</span>
+				<span class="span6 pull-right">
+					<iframe width="560" height="315" src="http://www.youtube.com/embed/QACVOOsY-u0" frameborder="0" allowfullscreen></iframe>
+				</span>
 			</div>
-		
+			
 	</div>
 
 	<div class="row" id="benefits">
