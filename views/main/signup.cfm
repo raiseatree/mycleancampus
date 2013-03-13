@@ -6,16 +6,9 @@
 		<br /><br /><br /><br />
 		<div class="span12">
 			<h2>Sign Up CleanCampus</h2>
-			<p><strong>You're 30 seconds away from having a much cleaner campus! Select your package and then fill in the short form and we'll activate your account as quickly as we can.</strong></p>
+			<p><strong>You're 30 seconds away from having a much cleaner campus! Select your package and then fill in the short form and we'll activate your account so you can receive reports.</strong></p>
 		</div>	
 	
-		<span class="signupBox">
-			<h3>30-Day FREE Trial</h3>
-			<h4><strike class="red">&pound;250.00</strike> &pound;FREE</h4>
-			<p class="green"><strong>ex VAT</strong></p>
-			<p>Limited Time Only!</p>
-			<p><a href="##" class="btn btn-primary btn-large signup-btn">Select</a></p>
-		</span>
 		<span class="signupBox">
 			<h3>College</h3>
 			<h4><strike class="red">&pound;500.00</strike> &pound;250.00/year</h4>
@@ -23,13 +16,13 @@
 			<p>Up to 250 staff</p>
 			<p><a href="##" class="btn btn-primary btn-large signup-btn">Select</a></p>
 		</span>
-		<!---<span class="signupBox">
-			<h3>Large College</h3>
+		<span class="signupBox" id="earlyAdopter">
+			<h3>EARLY ADOPTER</h3>
 			<h4><strike class="red">&pound;1,000.00</strike> &pound;500.00/year</h4>
 			<p class="green"><strong>ex VAT</strong></p>
-			<p>Up to 1,000 staff</p>
+			<p><strong>1,000 Staff - LIMITED TIME ONLY</strong></p>
 			<p><a href="##" class="btn btn-primary btn-large signup-btn">Select</a></p>
-		</span>--->
+		</span>
 		<span class="signupBox">
 			<h3>University</h3>
 			<h4><strike class="red">&pound;2,000.00</strike> &pound;1,000.00/year</h4>
@@ -164,6 +157,9 @@
 	
 	<script>
 		$(document).ready(function() {
+			
+			// Activate the early adopter option
+			$('##earlyAdopter').css('background-color','rgba(131,197,0,0.25)');
 			
 			$('.signup-btn').click(function() {
 				
