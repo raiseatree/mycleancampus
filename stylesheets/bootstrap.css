@@ -5805,3 +5805,77 @@ ul.iconList li {
 	   -moz-border-radius: 5px;
 	        border-radius: 5px;	
 }
+
+/*
+ * Defines the flash message style 
+ */
+.notification {
+  text-align: center;
+  display: none;
+  width: 100%;
+  position: fixed;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.2em;
+  overflow: visible;
+  z-index: 100;
+}
+.success {
+  color: #ffffff;
+  border-bottom: solid 2px #83c500;
+  background: #70ae00;
+  background-color: #70ae00;
+  background-image: -webkit-linear-gradient(top, #70ae00, #83c500);
+  background-image: -moz-linear-gradient(top, #70ae00, #83c500);
+  background-image: -o-linear-gradient(top, #70ae00, #83c500);
+  background-image: -ms-linear-gradient(top, #70ae00, #83c500);
+  background-image: linear-gradient(top, #70ae00, #83c500);
+  background-color: #70ae00;
+  background-image: -webkit-linear-gradient(top, #70ae00, #83c500);
+  background-image: -moz-linear-gradient(top, #70ae00, #83c500);
+  background-image: -o-linear-gradient(top, #70ae00, #83c500);
+  background-image: -ms-linear-gradient(top, #70ae00, #83c500);
+  background-image: linear-gradient(top, #70ae00, #83c500);
+  background-color: #70ae00;
+  background-image: -webkit-linear-gradient(top, #70ae00, #83c500);
+  background-image: -moz-linear-gradient(top, #70ae00, #83c500);
+  background-image: -o-linear-gradient(top, #70ae00, #83c500);
+  background-image: -ms-linear-gradient(top, #70ae00, #83c500);
+  background-image: linear-gradient(top, #70ae00, #83c500);
+  background-color: #70ae00;
+  background-image: -webkit-linear-gradient(top, #70ae00, #83c500);
+  background-image: -moz-linear-gradient(top, #70ae00, #83c500);
+  background-image: -o-linear-gradient(top, #70ae00, #83c500);
+  background-image: -ms-linear-gradient(top, #70ae00, #83c500);
+  background-image: linear-gradient(top, #70ae00, #83c500);
+}
+.error {
+  color: #ffffff;
+  border-bottom: solid 2px #e31b23;
+  background-color: #f18d9a;
+  background-image: -webkit-linear-gradient(top, #f18d9a, #e31b23);
+  background-image: -moz-linear-gradient(top, #f18d9a, #e31b23);
+  background-image: -o-linear-gradient(top, #f18d9a, #e31b23);
+  background-image: -ms-linear-gradient(top, #f18d9a, #e31b23);
+  background-image: linear-gradient(top, #f18d9a, #e31b23);
+  background-color: #f18d9a;
+  background-image: -webkit-linear-gradient(top, #f18d9a, #e31b23);
+  background-image: -moz-linear-gradient(top, #f18d9a, #e31b23);
+  background-image: -o-linear-gradient(top, #f18d9a, #e31b23);
+  background-image: -ms-linear-gradient(top, #f18d9a, #e31b23);
+  background-image: linear-gradient(top, #f18d9a, #e31b23);
+  background-color: #f18d9a;
+  background-image: -webkit-linear-gradient(top, #f18d9a, #e31b23);
+  background-image: -moz-linear-gradient(top, #f18d9a, #e31b23);
+  background-image: -o-linear-gradient(top, #f18d9a, #e31b23);
+  background-image: -ms-linear-gradient(top, #f18d9a, #e31b23);
+  background-image: linear-gradient(top, #f18d9a, #e31b23);
+  background-color: #f18d9a;
+  background-image: -webkit-linear-gradient(top, #f18d9a, #e31b23);
+  background-image: -moz-linear-gradient(top, #f18d9a, #e31b23);
+  background-image: -o-linear-gradient(top, #f18d9a, #e31b23);
+  background-image: -ms-linear-gradient(top, #f18d9a, #e31b23);
+  background-image: linear-gradient(top, #f18d9a, #e31b23);
+}

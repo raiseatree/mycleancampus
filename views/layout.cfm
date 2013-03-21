@@ -32,17 +32,19 @@
 					</a>
 					#linkTo(controller="main", action="home", class="brand", text=imageTag('cleancampus-logo.png'))#
 					
-					<div class="nav-collapse collapse">
+					<cfif Not(IsDefined("data.hideNav"))>
+						<div class="nav-collapse collapse">
 						
-						<ul class="nav">
-							<li<cfif page EQ 'home'> class="active"</cfif>><a href="/">Home</a></li>
-							<li><a href="/##benefits">Benefits</a></li>
-							<li><a href="/##features">Features</a></li>
-							<li<cfif page EQ 'contact'> class="active"</cfif>>#linkTo(controller="main", action="contact", text="Contact")#</a></li>
-							<li>#linkTo(controller="main", action="signup", text="Sign Up &raquo;", class="btn btn-primary")#</li>
-						</ul>
-					
-					</div><!--/.nav-collapse -->
+							<ul class="nav">
+								<li<cfif page EQ 'home'> class="active"</cfif>><a href="/">Home</a></li>
+								<li><a href="/##benefits">Benefits</a></li>
+								<li><a href="/##features">Features</a></li>
+								<li<cfif page EQ 'contact'> class="active"</cfif>>#linkTo(controller="main", action="contact", text="Contact")#</a></li>
+								<li>#linkTo(controller="main", action="signup", text="Sign Up &raquo;", class="btn btn-primary")#</li>
+							</ul>
+						
+						</div><!--/.nav-collapse -->
+					</cfif>
 				
 				</div>
 			
@@ -62,11 +64,18 @@
 	
 		</div> <!-- /container -->
 		
+		<!--- Display any flash messages --->
+		<cfif NOT flashIsEmpty()>
+			<div id="notification" class="notification <cfif flashKeyExists('success')>success<cfelseif flashKeyExists('error')>error</cfif>">
+				<span id="notification-text"><cfif flashKeyExists("success")>#flash("success")#<cfelseif flashKeyExists("error")>#flash("error")#</cfif></span>
+			</div>
+		</cfif>
+		
 		<!-- Cookie control stuff -->
 		<script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
 		
 		<!-- JS Here to load page quicker -->
-		#javaScriptIncludeTag('cookieControl-5.1.min')#
+		#javaScriptIncludeTag('cookieControl-5.1.min,global')#
 		
 		<!-- More Cookie Control Stuff -->
 		<script type="text/javascript">//<![CDATA[

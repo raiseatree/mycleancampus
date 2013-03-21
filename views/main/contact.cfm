@@ -4,7 +4,7 @@
 	
 	<div class="row">
 		<br /><br /><br /><br />
-		<div class="span7">
+		<div class="span6">
 			<h2>Contact CleanCampus</h2>
 			<p><strong>Got a question? We're hear to help and would love to hear from you</strong></p>
 			<p class="clearfix">
@@ -28,8 +28,8 @@
 			<p>Not at all, we are happy to invoice you as long as you have raised a purchase order internally and include the Purchase Order reference number on the #linkTo(controller="main", action="signup", text="Sign Up Page")#.</p>
 		</div>
 		
-		<div class="span5">
-			[LINK TO VIDEO HERE]
+		<div class="span6">
+			<iframe width="560" height="315" src="http://www.youtube.com/embed/QACVOOsY-u0" frameborder="0" allowfullscreen></iframe>
 		</div>
 
 	</div>

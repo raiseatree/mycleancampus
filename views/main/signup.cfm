@@ -1,3 +1,4 @@
+<cfparam name="data">
 <cfoutput>
 
 	<cfparam name="title" default="Sign Up to CleanCampus">
@@ -9,34 +10,16 @@
 			<p><strong>You're 30 seconds away from having a much cleaner campus! Select your package and then fill in the short form and we'll activate your account so you can receive reports.</strong></p>
 		</div>	
 	
-		<span class="signupBox">
-			<h3>College</h3>
-			<h4><strike class="red">&pound;500.00</strike> &pound;250.00/year</h4>
-			<p class="green"><strong>ex VAT</strong></p>
-			<p>Up to 250 staff</p>
-			<p><a href="##" class="btn btn-primary btn-large signup-btn">Select</a></p>
-		</span>
-		<span class="signupBox" id="earlyAdopter">
-			<h3>EARLY ADOPTER</h3>
-			<h4><strike class="red">&pound;1,000.00</strike> &pound;500.00/year</h4>
-			<p class="green"><strong>ex VAT</strong></p>
-			<p><strong>1,000 Staff - LIMITED TIME ONLY</strong></p>
-			<p><a href="##" class="btn btn-primary btn-large signup-btn">Select</a></p>
-		</span>
-		<span class="signupBox">
-			<h3>University</h3>
-			<h4><strike class="red">&pound;2,000.00</strike> &pound;1,000.00/year</h4>
-			<p class="green"><strong>ex VAT</strong></p>
-			<p>Up to 5,000 staff</p>
-			<p><a href="##" class="btn btn-primary btn-large signup-btn">Select</a></p>
-		</span>
-		<span class="signupBox">
-			<h3>Large University</h3>
-			<h4><strike class="red">&pound;4,000.00</strike> &pound;2,000.00/year</h4>
-			<p class="green"><strong>ex VAT</strong></p>
-			<p>Over 5,000 staff</p>
-			<p><a href="##" class="btn btn-primary btn-large signup-btn">Select</a></p>
-		</span>
+		<cfloop query="data.packages">
+			<span class="signupBox">
+				<h3>#packageName#</h3>
+				<h4><strike class="red">&pound;#DecimalFormat(price)#</strike> &pound;#DecimalFormat(price/2)#/year</h4>
+				<p class="green"><strong>ex VAT</strong></p>
+				<p>Up to #LSNumberFormat(noStaff)# staff</p>
+				<p><a href="##" class="btn btn-primary btn-large signup-btn" id="#id#">Select</a></p>
+			</span>
+		</cfloop>
+		
 	</div>
 	
 	<div id="signupMsg">
@@ -58,43 +41,55 @@
 					<legend>Your Details</legend>
 					<p>
 						<span class="span2"><strong>Full Name#imageTag('req.png')# </strong></span>
-						<span class="span3">#textFieldTag(name="fullName")#</span>
+						<span class="span3">#textField(objectName="data.customer", property="fullname", label="")#</span>
 					</p>
 					<p>
 						<span class="span2"><strong>Email#imageTag('req.png')# </strong></span>
-						<span class="span3">#textFieldTag(name="email")#</span>
+						<span class="span3">#textField(objectName="data.customer", property="email", label="")#</span>
+					</p>
+					<p>
+						<span class="span2"><strong>Password#imageTag('req.png')# </strong></span>
+						<span class="span3">#passwordFieldTag(name="customer[password]", label="")#</span>
 					</p>
 					<p>
 						<span class="span2"><strong>Telephone#imageTag('req.png')# </strong></span>
-						<span class="span3">#textFieldTag(name="tel")#</span>
+						<span class="span3">#textField(objectName="data.customer", property="phone", label="")#</span>
 					</p>
 				</fieldset>
 				
 				<fieldset>
-					<legend>Campus Details</legend>
+					<legend>Institution Details</legend>
 					<p>
-						<span class="span2"><strong>Campus Name#imageTag('req.png')# </strong></span>
-						<span class="span3">#textFieldTag(name="campusName")#</span>
+						<span class="span2"><strong>Institution Name#imageTag('req.png')# </strong></span>
+						<span class="span3">#select(objectName="data.customer", property="universityID", options=data.institutions, includeBlank=true, label="", class="uniID")#</span>
+					</p>
+					<p class="hide other">
+						<span class="span2"><strong>Enter Institution Name#imageTag('req.png')# </strong></span>
+						<span class="span3">#textFieldTag(name="customer[newInstitution]", label="")#</span>
 					</p>
 					<p>
 						<span class="span2"><strong>Address#imageTag('req.png')# </strong></span>
-						<span class="span3">#textFieldTag(name="campusAddress")#</span>
+						<span class="span3">#textField(objectName="data.customer", property="address", label="")#</span>
 					</p>
 					<p>
 						<span class="span2"><strong>Address 2 </strong></span>
-						<span class="span3">#textFieldTag(name="campusAddress2")#</span>
+						<span class="span3">#textField(objectName="data.customer", property="address2", label="")#</span>
 					</p>
 					<p>
 						<span class="span2"><strong>Town/City#imageTag('req.png')# </strong></span>
-						<span class="span3">#textFieldTag(name="campusTownCity")#</span>
+						<span class="span3">#textField(objectName="data.customer", property="townCity", label="")#</span>
 					</p>
 					<p>
 						<span class="span2"><strong>State/County#imageTag('req.png')# </strong></span>
-						<span class="span3">#textFieldTag(name="campusCounty")#</span>
+						<span class="span3">#textField(objectName="data.customer", property="county", label="")#</span>
 					</p>
 					<p>
 						<span class="span2"><strong>Post/Zip Code#imageTag('req.png')# </strong></span>
-						<span class="span3">#textFieldTag(name="campusPostCode")#</span>
+						<span class="span3">#textField(objectName="data.customer", property="postCode", label="")#</span>
+					</p>
+					<p>
+						<span class="span2"><strong>How did you find us?#imageTag('req.png')# </strong></span>
+						<span class="span3">#textField(objectName="data.customer", property="referral", label="")#</span>
 					</p>
 				</fieldset>
 				
@@ -102,7 +97,7 @@
 					<legend>Payment Details</legend>
 					<p>
 						<span class="span2"><strong>Payment Option#imageTag('req.png')# </strong></span>
-						<span class="span3">#radioButtonTag(name="paymentOption", class="online", value="online")# Pay Online Securely #imageTag('worldpay.gif')#<br /><br />#radioButtonTag(name="paymentOption", class="invoice", value="invoice")# Pay by Invoice</span>
+						<span class="span3">#radioButtonTag(name="paymentOption", class="online", value="online")# Pay Online Securely <br /><br />#imageTag('paypal.png')#<br /><br />#radioButtonTag(name="paymentOption", class="invoice", value="invoice")# Pay by Invoice</span>
 						<br />
 					</p>
 				</fieldset>
@@ -111,38 +106,39 @@
 					<legend>Purchase Order Details</legend>
 					<p>
 						<span class="span2"><strong>Purchase Order Ref#imageTag('req.png')# </strong></span>
-						<span class="span3">#textFieldTag(name="purchaseOrder")#</span>
+						<span class="span3">#textField(objectName="data.invoice", property="purchaseOrderRef", label="")#</span>
 					</p>
 					
 					<legend>Invoice Address Details</legend>
 					<p>
 						<span class="span2"><strong>FAO#imageTag('req.png')# </strong></span>
-						<span class="span3">#textFieldTag(name="invoiceFAO")#</span>
+						<span class="span3">#textField(objectName="data.invoice", property="fao", label="")#</span>
 					</p>
 					<p>
 						<span class="span2"><strong>Address#imageTag('req.png')# </strong></span>
-						<span class="span3">#textFieldTag(name="invoiceAddress")#</span>
+						<span class="span3">#textField(objectName="data.invoice", property="address", label="")#</span>
 					</p>
 					<p>
 						<span class="span2"><strong>Address 2 </strong></span>
-						<span class="span3">#textFieldTag(name="invoiceAddress2")#</span>
+						<span class="span3">#textField(objectName="data.invoice", property="address2", label="")#</span>
 					</p>
 					<p>
 						<span class="span2"><strong>Town/City#imageTag('req.png')# </strong></span>
-						<span class="span3">#textFieldTag(name="invoiceTownCity")#</span>
+						<span class="span3">#textField(objectName="data.invoice", property="townCity", label="")#</span>
 					</p>
 					<p>
 						<span class="span2"><strong>State/County#imageTag('req.png')# </strong></span>
-						<span class="span3">#textFieldTag(name="invoiceCounty")#</span>
+						<span class="span3">#textField(objectName="data.invoice", property="county", label="")#</span>
 					</p>
 					<p>
 						<span class="span2"><strong>Post/Zip Code#imageTag('req.png')# </strong></span>
-						<span class="span3">#textFieldTag(name="invoicePostCode")#</span>
+						<span class="span3">#textField(objectName="data.invoice", property="postCode", label="")#</span>
 					</p>
 				</fieldset>
 				
 				<br /><br />
 				<p>
+					#hiddenFieldTag(name="customer[packageID]", value="", id="packageID")#
 					<span class="span2">#submitTag(name="btnSubmit", class="btn btn-primary btn-large span2", value="Sign Up Now &raquo;")#</span> <span class="span4"><strong>Any questions? Give us a call on 0191 XXX XXXX or email #mailTo('hello@cleancampus.com')#</strong></span>
 				</p>
 			
@@ -158,10 +154,14 @@
 	<script>
 		$(document).ready(function() {
 			
-			// Activate the early adopter option
-			$('##earlyAdopter').css('background-color','rgba(131,197,0,0.25)');
+			// Add an other option into the institutions list 
+			$('.uniID').append('<option value=0>Other</option>');
 			
+			// Action for when user chooses a package
 			$('.signup-btn').click(function() {
+				
+				// Set the package id 
+				$('##packageID').val($(this).attr('id'));
 				
 				// Reset any packages which have previously been selected
 				$('.signupBox').each(function() {
@@ -180,6 +180,18 @@
 				});
 			});
 			
+			// Work out if user has selected 'other' institution
+			$('.uniID').change(function() {
+				var str = "";
+				$(".uniID option:selected").each(function () {
+					str += $(this).text() + " ";
+				});
+				
+				if (str = 'Other') $('.other').fadeIn();
+				else $('.other').fadeOut();
+			});
+			
+			// Show/hide the purchase order form
 			$('.online').click(function() {
 				$('.purchaseOrder').fadeOut();
 			});
