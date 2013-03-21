@@ -52,8 +52,15 @@
 			<cfif params.customer.universityID EQ 0>
 				<cfif IsDefined("params.customer.newInstitution") AND params.customer.newInstitution GT ''>
 					
+					<!--- Send off a web call to work out the post code --->
+					<cfset address = "http://maps.googleapis.com/maps/api/geocode/json?address=" &  replace(params.customer.postCode,' ','+','ALL') & "&sensor=false">
+					<cfhttp url="#address#" result="google" />
+					<cfset data = DeserializeJSON(google.FileContent)>
+					<cfset lat = data.results[1].geometry.location.lat>
+					<cfset lng = data.results[1].geometry.location.lng>
+					
 					<!--- Add a new institution --->
-					<cfset loc.addUni = model("university").create(uniName=params.customer.newInstitution)>
+					<cfset loc.addUni = model("university").create(uniName=params.customer.newInstitution, centreLat=lat, centreLon=lng)>
 					<cfset params.customer.universityID = loc.addUni.ID>
 					
 				<cfelse>

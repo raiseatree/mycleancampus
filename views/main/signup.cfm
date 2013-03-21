@@ -184,11 +184,11 @@
 			$('.uniID').change(function() {
 				var str = "";
 				$(".uniID option:selected").each(function () {
-					str += $(this).text() + " ";
+					str += $(this).text()
 				});
 				
-				if (str = 'Other') $('.other').fadeIn();
-				else $('.other').fadeOut();
+				if (str == 'Other') $('.other').fadeIn();
+				//else $('.other').fadeOut();
 			});
 			
 			// Show/hide the purchase order form
