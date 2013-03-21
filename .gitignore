@@ -8,15 +8,12 @@ files/*.*
 
 
 # Railo Web Context Password file & cached classes & temp files
-WEB-INF/railo/cfclasses
-WEB-INF/railo/logs
-WEB-INF/railo/scheduler/scheduler.xml
-WEB-INF/railo/temp
-WEB-INF/railo/lib-hash
+WEB-INF
 
 # Other files and folders to ignore
 *.DS_Store
 *.log
+*.log.*
 log/access.log
 *.metadata
 *.project
