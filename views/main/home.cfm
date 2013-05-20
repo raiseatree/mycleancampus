@@ -11,7 +11,7 @@
 					<p><br />#linkTo(controller="main", action="signup", text="Sign Up &raquo;", class="btn btn-primary btn-large")#</p>
 				</span>
 				<span class="span6 pull-right">
-					<iframe width="560" height="315" src="http://www.youtube.com/embed/QACVOOsY-u0" frameborder="0" allowfullscreen></iframe>
+					<iframe width="420" height="300" src="http://www.youtube.com/embed/QACVOOsY-u0" frameborder="0" allowfullscreen></iframe>
 				</span>
 			</div>
 			
