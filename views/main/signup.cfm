@@ -8,6 +8,7 @@
 		<div class="span12">
 			<h2>Sign Up CleanCampus</h2>
 			<p><strong>You're 30 seconds away from having a much cleaner campus! Select your package and then fill in the short form and we'll activate your account so you can receive reports.</strong></p>
+			<p>Launch offer: Half price for first 20 subscribers!</p>
 		</div>	
 	
 		<cfloop query="data.packages">

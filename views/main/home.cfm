@@ -11,7 +11,7 @@
 					<p><br />#linkTo(controller="main", action="signup", text="Sign Up &raquo;", class="btn btn-primary btn-large")#</p>
 				</span>
 				<span class="span6 pull-right">
-					<iframe width="420" height="300" src="http://www.youtube.com/embed/QACVOOsY-u0" frameborder="0" allowfullscreen></iframe>
+					<iframe width="420" height="300" src="http://www.youtube.com/embed/83kKZ7jAGRU" frameborder="0" allowfullscreen></iframe>
 				</span>
 			</div>
 			
@@ -41,8 +41,8 @@
 			<p>CleanCampus also offers Facilities Managers the opportunity to evaluate all campus appearance issues in one place, over time. This allows managers to focus resources efficiently - toward the common goal of maintaining the campus at the highest possible standard. </p>
 		</div>
 		
-		<div class="span5">
-			#imageTag('benefits.png')#
+		<div class="span2 offset1">
+			#imageTag(source='iphone-scnshot.png', class="center-align span2")#
 		</div>
 		
 	</div><hr>
