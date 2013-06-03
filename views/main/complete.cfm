@@ -7,12 +7,13 @@
 		<div class="span12">
 			<h2>Welcome to CleanCampus!</h2>
 			<p><strong>Thanks for joining CleanCampus! We'll generate your invoice now and send it off to the nominated contact within your organisation.</strong></p>
+			<p>As soon as we've received payment we'll enable your university immediately.</p>
 		</div>
 	</div>
 	
 	<br />
 	
-	<!--- Code to log into the app --->
-	#linkTo(href="#loadAppURL()#", class="btn btn-primary btn-large", text="Login to CleanCampus &raquo;")#
+	<!--- Code to log into the app 
+	#linkTo(href="#loadAppURL()#", class="btn btn-primary btn-large", text="Login to CleanCampus &raquo;")#--->
 	
 </cfoutput>
