@@ -9,7 +9,7 @@
 			<p><strong>Got a question? We're hear to help and would love to hear from you</strong></p>
 			<p class="clearfix">
 				#mailTo(emailAddress="hello@cleancampus.co.uk", name="Email Us &raquo;", class="btn btn-primary btn-large span2")#
-				<span class="span3">Alternatively, feel free to give us a call on 0191 XXX XXXX</span>
+				<!---<span class="span3">Alternatively, feel free to give us a call on 0191 XXX XXXX</span>--->
 			</p>
 			
 			<hr/>
@@ -21,7 +21,7 @@
 			<p>If you have any questions, we'd be delighted to answer them for you. Simply send an email to: #mailTo(emailAddress="hello@cleancampus.co.uk?subject=I have a question!", name="hello@cleancampus.co.uk")#</p>
 				
 			<h3>Book in Telephone Chat</h3>
-			<p>We'd be more than happy to chat through any questions or queries you have on the phone, simply call us on 0191 XXX XXXX or email us to arrange a callback: #mailTo(emailAddress="hello@cleancampus.co.uk?subject=Call Me!", name="hello@cleancampus.co.uk")#</p>
+			<p>We'd be more than happy to chat through any questions or queries you have on the phone, simply <!---call us on 0191 XXX XXXX or --->email us to arrange a callback: #mailTo(emailAddress="hello@cleancampus.co.uk?subject=Call Me!", name="hello@cleancampus.co.uk")#</p>
 				
 			<h3>FAQ</h3>
 			<h4>Do I have to pay online?</h4>

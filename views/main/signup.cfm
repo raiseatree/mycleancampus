@@ -7,8 +7,8 @@
 		<br /><br /><br /><br />
 		<div class="span12">
 			<h2>Sign Up CleanCampus</h2>
-			<p><strong>You're 30 seconds away from having a much cleaner campus! Select your package and then fill in the short form and we'll activate your account so you can receive reports.</strong></p>
-			<p>Launch offer: Half price for first 20 subscribers!</p>
+			<h3>Launch offer: Half price for first 20 subscribers!</h3>
+			<p>You're 30 seconds away from having a much cleaner campus! Select your package and then fill in the short form and we'll activate your account so you can receive reports.</p>
 		</div>	
 	
 		<cfloop query="data.packages">
@@ -140,7 +140,7 @@
 				<br /><br />
 				<p>
 					#hiddenFieldTag(name="customer[packageID]", value="", id="packageID")#
-					<span class="span2">#submitTag(name="btnSubmit", class="btn btn-primary btn-large span2", value="Sign Up Now &raquo;")#</span> <span class="span4"><strong>Any questions? Give us a call on 0191 XXX XXXX or email #mailTo('hello@cleancampus.com')#</strong></span>
+					<span class="span2">#submitTag(name="btnSubmit", class="btn btn-primary btn-large span2", value="Sign Up Now &raquo;")#</span> <span class="span4"><strong>Any questions? <!---Give us a call on 0191 XXX XXXX or email---> Email us on #mailTo('hello@cleancampus.com')#</strong></span>
 				</p>
 			
 			#endFormTag()#
