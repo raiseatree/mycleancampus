@@ -27,7 +27,7 @@
 		</div>
 		
 		<div class="span5"><br /><br /><br />
-			#imageTag('app-store-logo.png')#
+			#linkTo(href="https://itunes.apple.com/en/app/clean-campus/id648337851?mt=8", text=imageTag('app-store-logo.png'))#
 			#imageTag('android-market-logo.png')#
 		</div>
 		
@@ -78,7 +78,7 @@
 		
 		<div class="span5">
 			<h2>Download the iPhone App</h2>
-			<a href="##">#imageTag('app-store-logo.png')#</a>
+			#linkTo(href="https://itunes.apple.com/en/app/clean-campus/id648337851?mt=8", text=imageTag('app-store-logo.png'))#
 		</div>
 
 	</div>
