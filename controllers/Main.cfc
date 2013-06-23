@@ -21,6 +21,45 @@
 	
 	<cffunction name="home"></cffunction>
 	
+	<cffunction name="approve" hint="Approves an account for use">
+		
+		<cfif IsDefined("params.ID")>
+		
+			<!--- Decrypt the ID --->
+			<cfset loc.ID = decrypt(params.ID, GetEncryptKey(), "CFMX_COMPAT", "Hex")>
+			
+			<!--- Lookup the customer --->
+			<cfset customer = model("customer").findOne(where="ID=#loc.ID#")>
+			
+			<cfif IsObject(customer)>
+				
+				<!--- Enable the customer's account --->
+				<cfset customer.enabled = 1>
+				<cfset customer.save()>
+				
+				<!--- Mail the customer --->
+				<cfset sendEmail(to=customer.email, 
+						from="hello@cleancamp.us", 
+						subject="Your CleanCampus account is now active", 
+						template="/emails/customerEnable", 
+						data=customer)>
+				
+				<cfset flashInsert(success="Customer account approved successfully")>
+				
+			<cfelse>
+				<cfset flashInsert(error="Sorry - could not find the customer you tried to approve")>
+			</cfif>
+			
+			<!--- Redirect to the homepage --->
+			<cfset redirectTo(route="home")>
+		
+		<cfelse>
+			<cfset flashInsert(error="Sorry - cannot access that page like that")>
+			<cfset redirectTo(back=true)>
+		</cfif>
+	
+	</cffunction>
+	
 	<cffunction name="paypal">
 	
 		<cfif IsDefined("SESSION.amount")>
@@ -42,11 +81,7 @@
 		
 			<!--- Create the expiry date and determine whether to auto enable the customer's account --->
 			<cfset params.customer.licenceExpiry = DateAdd("yyyy",1,now())>
-			<cfif IsDefined("params.paymentOption") AND params.paymentOption EQ 'invoice'>
-				<cfset params.customer.enabled = 1>
-			<cfelse>
-				<cfset params.customer.enabled = 0>
-			</cfif>
+			<cfset params.customer.enabled = 0>
 			
 			<!--- Work out if the user chose an institution we don't currently have in our db --->
 			<cfif params.customer.universityID EQ 0>
@@ -126,6 +161,28 @@
 					<!--- Save the new customer --->
 					<cfset loc.addCustomer.save()>
 				</cfif>
+				
+				<!--- Load the institution the user chose --->
+				<cfif IsDefined("params.newInstitution") AND params.newInstitution GT ''>
+					<cfset institution.name = params.newInstitution>
+				<cfelse>
+					<cfset uni = model("university").findOne(where="ID=#params.customer.universityID#")>
+					<cfset institution.name = uni.uniName>
+				</cfif>
+			
+				<!--- Fire off an email to us --->
+				<cfset sendEmail(to="hello@cleancampus.co.uk", 
+						from="emails@cleancampus.co.uk", 
+						subject="New Registration - CleanCampus", 
+						template="/emails/newRegistrationInvoice", 
+						customer=loc.addCustomer, invoice=loc.invoice, uni=institution.name)>
+				
+				<!--- Fire off an email to the customer --->
+				<cfset sendEmail(to=loc.addCustomer.email, 
+						from="hello@cleancampus.co.uk", 
+						subject="CleanCampus Registration", 
+						template="/emails/newCustomerInvoice", 
+						customer=loc.addCustomer, invoice=loc.invoice)>
 			
 				<!--- Flash and redirect --->
 				<cfset flashInsert(success="Thanks for registering, your account is now setup")>
