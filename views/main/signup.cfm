@@ -42,7 +42,7 @@
 					<legend>Your Details</legend>
 					<p>
 						<span class="span2"><strong>Full Name#imageTag('req.png')# </strong></span>
-						<span class="span3">#textField(objectName="data.customer", property="fullname", label="")#</span>
+						<span class="span3">#textField(objectName="data.customer", property="fullname", class="customer-name", label="")#</span>
 					</p>
 					<p>
 						<span class="span2"><strong>Email#imageTag('req.png')# </strong></span>
@@ -70,23 +70,23 @@
 					</p>
 					<p>
 						<span class="span2"><strong>Address#imageTag('req.png')# </strong></span>
-						<span class="span3">#textField(objectName="data.customer", property="address", label="")#</span>
+						<span class="span3">#textField(objectName="data.customer", property="address", class="customer-address", label="")#</span>
 					</p>
 					<p>
 						<span class="span2"><strong>Address 2 </strong></span>
-						<span class="span3">#textField(objectName="data.customer", property="address2", label="")#</span>
+						<span class="span3">#textField(objectName="data.customer", property="address2", class="customer-address2", label="")#</span>
 					</p>
 					<p>
 						<span class="span2"><strong>Town/City#imageTag('req.png')# </strong></span>
-						<span class="span3">#textField(objectName="data.customer", property="townCity", label="")#</span>
+						<span class="span3">#textField(objectName="data.customer", property="townCity", class="customer-towncity", label="")#</span>
 					</p>
 					<p>
 						<span class="span2"><strong>State/County#imageTag('req.png')# </strong></span>
-						<span class="span3">#textField(objectName="data.customer", property="county", label="")#</span>
+						<span class="span3">#textField(objectName="data.customer", property="county", class="customer-county", label="")#</span>
 					</p>
 					<p>
 						<span class="span2"><strong>Post/Zip Code#imageTag('req.png')# </strong></span>
-						<span class="span3">#textField(objectName="data.customer", property="postCode", label="")#</span>
+						<span class="span3">#textField(objectName="data.customer", property="postCode", class="customer-postcode", label="")#</span>
 					</p>
 					<p>
 						<span class="span2"><strong>How did you find us?#imageTag('req.png')# </strong></span>
@@ -113,27 +113,27 @@
 					<legend>Invoice Address Details</legend>
 					<p>
 						<span class="span2"><strong>FAO#imageTag('req.png')# </strong></span>
-						<span class="span3">#textField(objectName="data.invoice", property="fao", label="")#</span>
+						<span class="span3">#textField(objectName="data.invoice", property="fao", class="invoice-fao", label="")#</span>
 					</p>
 					<p>
 						<span class="span2"><strong>Address#imageTag('req.png')# </strong></span>
-						<span class="span3">#textField(objectName="data.invoice", property="address", label="")#</span>
+						<span class="span3">#textField(objectName="data.invoice", property="address", class="invoice-address", label="")#</span>
 					</p>
 					<p>
 						<span class="span2"><strong>Address 2 </strong></span>
-						<span class="span3">#textField(objectName="data.invoice", property="address2", label="")#</span>
+						<span class="span3">#textField(objectName="data.invoice", property="address2", class="invoice-address2", label="")#</span>
 					</p>
 					<p>
 						<span class="span2"><strong>Town/City#imageTag('req.png')# </strong></span>
-						<span class="span3">#textField(objectName="data.invoice", property="townCity", label="")#</span>
+						<span class="span3">#textField(objectName="data.invoice", property="townCity", class="invoice-towncity", label="")#</span>
 					</p>
 					<p>
 						<span class="span2"><strong>State/County#imageTag('req.png')# </strong></span>
-						<span class="span3">#textField(objectName="data.invoice", property="county", label="")#</span>
+						<span class="span3">#textField(objectName="data.invoice", property="county", class="invoice-county", label="")#</span>
 					</p>
 					<p>
 						<span class="span2"><strong>Post/Zip Code#imageTag('req.png')# </strong></span>
-						<span class="span3">#textField(objectName="data.invoice", property="postCode", label="")#</span>
+						<span class="span3">#textField(objectName="data.invoice", property="postCode", class="invoice-postcode", label="")#</span>
 					</p>
 				</fieldset>
 				
@@ -198,6 +198,15 @@
 			});
 			$('.invoice').click(function() {
 				$('.purchaseOrder').fadeIn();
+				
+				// Now prefill the user's billing/delivery details
+				$('.invoice-fao').val($('.customer-name').val());
+				$('.invoice-address').val($('.customer-address').val());
+				$('.invoice-address2').val($('.customer-address2').val());
+				$('.invoice-towncity').val($('.customer-towncity').val());
+				$('.invoice-county').val($('.customer-county').val());
+				$('.invoice-postcode').val($('.customer-postcode').val());
+				
 			});
 		});
 	</script>
