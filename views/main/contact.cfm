@@ -15,7 +15,7 @@
 			<hr/>
 
 			<h3>Book in a Webinar Session</h3>
-			<p>We frequently run online demos of CleanCampus and would love to show you as well - simply register for the next demo at <a href="http://www.cleancampus.eventbrite.com">http://www.cleancampus.eventbrite.com</a></p>
+			<p>We frequently run online demos of CleanCampus and would love to show you as well - simply register for the next demo at <!---<a href="http://www.cleancampus.eventbrite.com">http://www.cleancampus.eventbrite.com</a>--->#LinkTo(href="https://attendee.gotowebinar.com/register/6717059822534318848", text="https://attendee.gotowebinar.com/register/6717059822534318848")#</p>
 			
 			<h3>Ask a Question</h3>
 			<p>If you have any questions, we'd be delighted to answer them for you. Simply send an email to: #mailTo(emailAddress="hello@cleancampus.co.uk?subject=I have a question!", name="hello@cleancampus.co.uk")#</p>
